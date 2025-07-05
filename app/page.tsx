@@ -131,22 +131,24 @@ export default function Portfolio() {
     {
       title: "Hackathon",
       description:
-        "Grand Finalist Team in Technothon held by VES Polytechnic, Chembur",
+        "Grand Finalist Team in a hackathon, Technothon held at VES Polytechnic, Chembur. Designed a E-waste management website to allow citizens to connect with agencies for safe disposal Electonic Waste.",
       date: "2025",
       icon: <Star className="w-6 h-6" />,
       image: "/assets/images/ves.jpg",
     },
     {
       title: "Clue Chronicle",
-      description: "Best Project Award at Agnel Polytechnic Tech Fest",
-      date: "2024",
+      description:
+        "Secured first Prize in a technical clue competition held at KJSP, Vidyavihar.The competition was held in 2 rounds where we were asked various logical questions regarding popular programming languages such as python, C , C++. ",
+      date: "2025",
       icon: <Award className="w-6 h-6" />,
       image: "/assets/images/cluechronicle.jpg",
     },
     {
-      title: "Technical Paper Presentation",
-      description: "Top 10 finalist in State-level Programming Contest",
-      date: "2023",
+      title: "National Technical Paper Presentation",
+      description:
+        "Secured 3rd Place in National Level Technical Paper Presentation Competition held at BVIT, Pune. Presented About Event Memory System, a solution to better manage event photos and memories.",
+      date: "2025",
       icon: <Trophy className="w-6 h-6" />,
       image: "/assets/images/bvit.png",
     },
@@ -162,7 +164,8 @@ export default function Portfolio() {
     },
     {
       title: "OCM Head",
-      description: "Conducted web development workshops for junior students",
+      description:
+        "Operational Council Members Head, at Agnel Polytechnic Vashi.",
       date: "2024",
       icon: <Award className="w-6 h-6" />,
       image: "/assets/images/OCM.png",
@@ -170,7 +173,7 @@ export default function Portfolio() {
     {
       title: "Mr. Agnel",
       description:
-        "Was awarded the title Mr.Agnel at Fashion show competition held at Agnel Polytechnic",
+        "Awarded the title Mr.Agnel at Fashion show competition  at Agnel Polytechnic",
       date: "2025",
       icon: <Trophy className="w-6 h-6" />,
       image: "/assets/images/agnel.jpg",
@@ -227,7 +230,7 @@ export default function Portfolio() {
                 React Specialist
               </Badge>
               <Badge variant="secondary" className="px-4 py-2">
-                Firebase Developer
+                Backend Developer
               </Badge>
             </div>
           </div>
