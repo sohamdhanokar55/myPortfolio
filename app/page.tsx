@@ -158,7 +158,7 @@ export default function Portfolio() {
     {
       title: "Marathon Runner",
       description: "Active Member of Run club organizing marathons and events",
-      date: "2024",
+      date: "2025",
       icon: <Dumbbell className="w-6 h-6" />,
       image: "/assets/images/run.jpg",
     },
@@ -166,7 +166,7 @@ export default function Portfolio() {
       title: "OCM Head",
       description:
         "Operational Council Members Head, at Agnel Polytechnic Vashi.",
-      date: "2024",
+      date: "2025",
       icon: <Award className="w-6 h-6" />,
       image: "/assets/images/OCM.png",
     },
