@@ -37,7 +37,8 @@ export function Hero() {
   return (
     <section id="hero" className="relative flex min-h-screen items-center overflow-hidden pt-28">
       <AuroraBackground dense />
-      <div className="mx-auto w-full max-w-6xl px-6">
+      <div aria-hidden className="pointer-events-none absolute inset-x-0 bottom-0 z-0 h-48 bg-gradient-to-b from-transparent via-primary/10 to-background blur-2xl" />
+      <div className="relative z-10 mx-auto w-full max-w-6xl px-6">
         <motion.p
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}

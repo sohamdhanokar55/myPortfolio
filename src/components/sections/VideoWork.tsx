@@ -31,10 +31,10 @@ export function VideoWork() {
                   <img
                     src={v.image}
                     alt={`${v.title} thumbnail`}
-                    width={1024}
-                    height={640}
+                    width={576}
+                    height={1024}
                     loading="lazy"
-                    className="h-52 w-full object-cover transition-transform duration-700 group-hover:scale-110"
+                    className="aspect-[9/16] h-auto w-full bg-background/40 object-contain transition-transform duration-700 group-hover:scale-110"
                   />
                   <span className="absolute inset-0 flex items-center justify-center">
                     <span

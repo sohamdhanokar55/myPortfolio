@@ -33,7 +33,8 @@ export function Achievements() {
                 >
                   <Trophy className="size-5 text-primary-foreground" />
                 </span>
-                <h3 className="mt-5 font-display text-lg font-semibold">{a.title}</h3>
+                <span className="mt-5 inline-flex rounded-full border border-primary/30 bg-primary/10 px-2.5 py-1 text-[10px] uppercase tracking-widest text-primary">First Prize</span>
+                <h3 className="mt-4 font-display text-lg font-semibold">{a.title}</h3>
                 <p className="mt-2 text-sm text-muted-foreground">{a.detail}</p>
               </button>
             </Reveal>

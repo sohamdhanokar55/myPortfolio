@@ -18,7 +18,7 @@ export const CURSOR = {
   leadership: "Click to view!",
   research: "View research!",
   experience: "See my impact",
-  video: "Watch the edit",
+  video: "Watch the Edit",
   speaking: "On stage",
   recognition: "View the wins",
   gallery: "Behind the scenes",
@@ -112,7 +112,7 @@ export type Project = {
   category: "Web Development" | "AI" | "College Projects" | "Event Platforms";
   description: string;
   stack: string[];
-  image: string;
+  images: [MediaImage, ...MediaImage[]];
   note?: string;
   demo: string;
   github: string;
@@ -127,7 +127,11 @@ export const PROJECTS: Project[] = [
     description:
       "Flagship production system used to log late arrivals via barcode scanning, manage fines, export records to Excel and sync live with Google Sheets — replacing an entirely manual register workflow.",
     stack: ["Next.js", "Firebase", "Barcode Scanning", "Fine Management", "Excel Export", "Google Sheets API"],
-    image: projectAttendance,
+    images: [
+      { src: projectAttendance, alt: "Late Comers Attendance Management System" },
+      { src: projectZest, alt: "Late Comers system dashboard" },
+      { src: projectAttendance, alt: "Late Comers system records" },
+    ],
     note: "Officially recognised with a certificate by the institution.",
     demo: "#",
     github: "https://github.com/sohamdhanokar55/new-late-comers-next",
@@ -135,12 +139,16 @@ export const PROJECTS: Project[] = [
     accent: "oklch(0.58 0.24 292 / 35%)",
   },
   {
-    title: "APV Resonance 2K26 Website",
+    title: "APV Resonance 2026",
     category: "Event Platforms",
     description:
       "Animation-heavy festival website with scroll-driven reveals, cinematic hero motion and a schedule system built for thousands of visitors during fest week.",
     stack: ["Next.js", "Framer Motion", "GSAP", "Tailwind CSS"],
-    image: projectResonance,
+    images: [
+      { src: projectResonance, alt: "APV Resonance 2026 website" },
+      { src: speaker, alt: "APV Resonance 2026 event" },
+      { src: projectResonance, alt: "APV Resonance 2026 schedule" },
+    ],
     demo: "#",
     github: "https://github.com/sohamdhanokar55/resonance26.git",
     accent: "oklch(0.66 0.2 250 / 32%)",
@@ -151,7 +159,11 @@ export const PROJECTS: Project[] = [
     description:
       "End-to-end event platform with Razorpay payment integration, ticketing, registration dashboards and automated confirmation flows.",
     stack: ["React", "Razorpay", "Firebase", "Node.js"],
-    image: projectZest,
+    images: [
+      { src: projectZest, alt: "Zest 2026 event platform" },
+      { src: projectAttendance, alt: "Zest 2026 registration flow" },
+      { src: projectZest, alt: "Zest 2026 ticketing experience" },
+    ],
     demo: "#",
     github: "https://github.com/sohamdhanokar55/zest25",
     accent: "oklch(0.62 0.26 305 / 32%)",
@@ -162,22 +174,15 @@ export const PROJECTS: Project[] = [
     description:
       "Industry-collaborated ML system classifying coal grades from FT-NIR spectral data, combining research methodology with a deployable prediction pipeline.",
     stack: ["Python", "TensorFlow", "FT-NIR", "FastAPI"],
-    image: projectCoal,
+    images: [
+      { src: projectCoal, alt: "AI-based coal classification system" },
+      { src: projectAttendance, alt: "Coal classification prediction pipeline" },
+      { src: projectCoal, alt: "FT-NIR research system" },
+    ],
     note: "Research-backed, developed with industry collaboration.",
     demo: "#",
     github: "https://github.com/cppgroup04-ai/final_cpp.git",
     accent: "oklch(0.7 0.14 80 / 28%)",
-  },
-  {
-    title: "E-Waste Management Website",
-    category: "College Projects",
-    description:
-      "Sustainability platform helping users locate e-waste drop points, schedule pickups and understand the environmental impact of responsible disposal.",
-    stack: ["React", "Firebase", "Tailwind CSS"],
-    image: projectEwaste,
-    demo: "#",
-    github: "#",
-    accent: "oklch(0.72 0.16 155 / 28%)",
   },
 ];
 
@@ -234,34 +239,34 @@ export const LEADERSHIP = [
 
 export const ACHIEVEMENTS = [
   {
-    title: "6+ First Prize Wins",
-    detail: "Technical paper presentations across state and national platforms.",
+    title: "Thakur Shyamnarayan Engineering College, Kandivali",
+    detail: "First Prize — Technical Paper Presentation",
     images: [{ src: projectCoal, alt: "Technical paper first prize" }] satisfies MediaImage[],
   },
   {
-    title: "National Winner",
-    detail: "Winner at a national-level technical paper competition.",
+    title: "Shivajirao S. Jondhle Polytechnic, Asangaon",
+    detail: "First Prize — State Level Technical Paper Presentation",
     images: [{ src: projectAttendance, alt: "National winner recognition" }] satisfies MediaImage[],
   },
   {
-    title: "International Conference Winner",
-    detail: "Recognised at an international conference for research work.",
+    title: "Fr. C. Rodrigues Institute of Technology (FCRIT), Vashi",
+    detail: "First Prize — National Level Technical Paper Presentation",
     images: [{ src: projectCoal, alt: "International conference winner" }] satisfies MediaImage[],
   },
   {
-    title: "Blind Typing Runner-Up",
-    detail: "Second place in a competitive blind typing championship.",
-    images: [{ src: video3, alt: "Blind typing runner-up" }] satisfies MediaImage[],
+    title: "AR Kalsekar Polytechnic",
+    detail: "First Prize — Technical Paper Presentation",
+    images: [{ src: asstaward, alt: "AR Kalsekar Polytechnic first prize" }] satisfies MediaImage[],
   },
   {
-    title: "NEC IIT Bombay Rank",
-    detail: "Ranked at the National Entrepreneurship Challenge, IIT Bombay.",
-    images: [{ src: speaker, alt: "NEC IIT Bombay" }] satisfies MediaImage[],
+    title: "Agnel Polytechnic, Vashi (Technocratz)",
+    detail: "First Prize — State-Level Technical Paper Presentation (Artificial Intelligence)",
+    images: [{ src: projectCoal, alt: "Agnel Polytechnic Technocratz first prize" }] satisfies MediaImage[],
   },
   {
-    title: "Mr. Agnel",
-    detail: "Awarded the flagship all-round student title.",
-    images: [{ src: profile, alt: "Mr. Agnel title" }] satisfies MediaImage[],
+    title: "KJ Somaiya Polytechnic, Vidyavihar",
+    detail: "First Prize — Clue Chronicle Technical Competition",
+    images: [{ src: asstaward, alt: "KJ Somaiya Polytechnic first prize" }] satisfies MediaImage[],
   },
 ];
 
@@ -336,49 +341,123 @@ export const VIDEOS = [
   { title: "Promotional Reel", tag: "Motion Graphics · Brand", image: video3 },
 ];
 
-export const CERTIFICATIONS = [
+export const SPEAKER_TALKS = [
   {
+    title: "Skills That Matter More Than Marks",
+    audience: "Government college audience",
+    detail: "An expert lecture for BMC Government College students on practical skills, real projects, communication and leadership.",
+    image: speaker,
+  },
+  {
+    title: "A Step-by-Step Guide to Writing and Presenting a Technical Paper",
+    audience: "First-Year Diploma Students",
+    detail: "A practical walkthrough of choosing a topic, building evidence, structuring a paper and presenting research with confidence.",
+    image: projectCoal,
+  },
+] as const;
+
+export type Certification = {
+  title: string;
+  issuer: string;
+  year: string;
+  category: "Leadership & Recognition" | "Research Publications" | "Workshops" | "Marathons";
+  badge?: string;
+  description?: string;
+  images: MediaImage[];
+};
+
+export const CERTIFICATIONS: Certification[] = [
+  {
+    category: "Leadership & Recognition",
     title: "Late Comers System Recognition",
     issuer: "Institution Award",
     year: "2026",
     images: [{ src: projectAttendance, alt: "Late Comers System certificate" }] satisfies MediaImage[],
   },
   {
+    category: "Leadership & Recognition",
     title: "APV E-Cell President",
     issuer: "APV E-Cell",
     year: "2026",
     images: [{ src: speaker, alt: "APV E-Cell President certificate" }] satisfies MediaImage[],
   },
   {
+    category: "Leadership & Recognition",
     title: "APV Council OCM Head",
     issuer: "APV Council",
     year: "2026",
     images: [{ src: projectZest, alt: "OCM Head certificate" }] satisfies MediaImage[],
   },
   {
-    title: "Research Paper Certificate",
-    issuer: "International Conference",
+    category: "Leadership & Recognition",
+    title: "NEC (IIT Bombay)",
+    issuer: "National Entrepreneurship Challenge",
     year: "2025",
-    images: [{ src: projectCoal, alt: "Research paper certificate" }] satisfies MediaImage[],
+    images: [{ src: speaker, alt: "NEC IIT Bombay certificate" }] satisfies MediaImage[],
   },
   {
-    title: "Internship Certificates",
-    issuer: "Nayoda · SmartED · Stars N Celebs",
-    year: "2024 – 25",
-    images: [
-      { src: projectAttendance, alt: "Nayoda internship" },
-      { src: projectCoal, alt: "SmartED internship" },
-      { src: video3, alt: "Stars N Celebs internship" },
-    ] satisfies MediaImage[],
+    category: "Research Publications",
+    title: "Non-Destructive Coal Type Classification Using FT-NIR Spectroscopy and Machine Learning",
+    issuer: "International Journal For Multidisciplinary Research",
+    year: "Published research",
+    badge: "Published Research",
+    description: "A machine learning approach for classifying coal types from FT-NIR spectral data.",
+    images: [{ src: projectCoal, alt: "Coal classification research publication" }],
   },
   {
-    title: "Course Certificates",
-    issuer: "Full Stack · Machine Learning",
-    year: "2024 – 26",
-    images: [
-      { src: projectResonance, alt: "Full stack course" },
-      { src: projectCoal, alt: "Machine learning course" },
-    ] satisfies MediaImage[],
+    category: "Research Publications",
+    title: "AI-Based Coal Classification and Management System Using FT-NIR Spectroscopy",
+    issuer: "Journal of Advance and Future Research",
+    year: "Published research",
+    badge: "Published Research",
+    description: "Research into a deployable classification and management workflow using FT-NIR spectroscopy.",
+    images: [{ src: projectCoal, alt: "AI-based coal classification publication" }],
+  },
+  {
+    category: "Workshops",
+    title: "Illuminate 2025",
+    issuer: "Workshop",
+    year: "2025",
+    description: "Participated in a professional development workshop.",
+    images: [{ src: speaker, alt: "Illuminate 2025 workshop" }],
+  },
+  {
+    category: "Workshops",
+    title: "Supply Chain Management and Logistics Workshop",
+    issuer: "Workshop",
+    year: "2025",
+    description: "Explored supply chain operations and logistics systems.",
+    images: [{ src: projectZest, alt: "Supply chain management workshop" }],
+  },
+  {
+    category: "Workshops",
+    title: "Application Development Workshop",
+    issuer: "Workshop",
+    year: "2025",
+    description: "Developed mobile applications using PHP and SQL.",
+    images: [{ src: projectAttendance, alt: "Application development workshop" }],
+  },
+  {
+    category: "Workshops",
+    title: "Basic Life Support Workshop",
+    issuer: "Workshop",
+    year: "2025",
+    description: "Learned CPR and emergency response using BLS equipment.",
+    images: [{ src: profile, alt: "Basic Life Support workshop" }],
+  },
+  {
+    category: "Marathons",
+    title: "Yodha Marathon",
+    issuer: "Fitness achievement",
+    year: "10 KM Marathon",
+    images: [{ src: profile, alt: "Yodha 10 KM Marathon" }],
+  },
+  {
+    category: "Marathons",
+    title: "Udaan Marathon",
+    issuer: "Fitness achievement",
+    year: "10 KM Marathon",
+    images: [{ src: profile, alt: "Udaan 10 KM Marathon" }],
   },
 ];
 

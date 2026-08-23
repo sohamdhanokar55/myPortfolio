@@ -7,6 +7,21 @@ import { cn } from "@/lib/utils";
 
 function ProjectScene({ project, index, total }: { project: Project; index: number; total: number }) {
   const [tilt, setTilt] = useState({ x: 0, y: 0 });
+  const [imageIndex, setImageIndex] = useState(0);
+  const [paused, setPaused] = useState(false);
+  const currentImage = project.images[imageIndex] ?? project.images[0];
+
+  useEffect(() => {
+    setImageIndex(0);
+  }, [project.title]);
+
+  useEffect(() => {
+    if (paused || project.images.length < 2) return;
+    const timer = window.setInterval(() => {
+      setImageIndex((current) => (current + 1) % project.images.length);
+    }, 3000);
+    return () => window.clearInterval(timer);
+  }, [paused, project.images.length, project.title]);
 
   return (
     <div className="relative grid h-full items-center gap-8 px-6 lg:grid-cols-[0.45fr_0.55fr] lg:gap-12">
@@ -88,6 +103,8 @@ function ProjectScene({ project, index, total }: { project: Project; index: numb
           });
         }}
         onPointerLeave={() => setTilt({ x: 0, y: 0 })}
+        onMouseEnter={() => setPaused(true)}
+        onMouseLeave={() => setPaused(false)}
       >
         <motion.div
           initial={{ opacity: 0, scale: 0.95, y: 40, filter: "blur(12px)" }}
@@ -96,13 +113,20 @@ function ProjectScene({ project, index, total }: { project: Project; index: numb
           style={{ transformPerspective: 900 }}
           className="relative overflow-hidden rounded-3xl border border-primary/25 shadow-[var(--glow-soft)]"
         >
-          <img
-            src={project.image}
-            alt={`${project.title} preview`}
-            width={1280}
-            height={800}
-            className="aspect-[4/3] h-auto w-full object-cover sm:aspect-[16/11]"
-          />
+          <AnimatePresence initial={false} mode="wait">
+            <motion.img
+              key={currentImage.src + imageIndex}
+              src={currentImage.src}
+              alt={currentImage.alt}
+              width={1280}
+              height={800}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.8 }}
+              className="aspect-[4/3] h-auto w-full object-cover sm:aspect-[16/11]"
+            />
+          </AnimatePresence>
           <div
             aria-hidden
             className="pointer-events-none absolute inset-0"
@@ -116,6 +140,15 @@ function ProjectScene({ project, index, total }: { project: Project; index: numb
               <Sparkles className="size-3" /> Flagship
             </span>
           )}
+          <div className="absolute bottom-4 left-1/2 flex -translate-x-1/2 gap-1.5" aria-label="Project gallery" role="status">
+            {project.images.map((image, imageIndexValue) => (
+              <span
+                key={`${image.src}-${imageIndexValue}`}
+                aria-current={imageIndexValue === imageIndex}
+                className={`size-1.5 rounded-full transition-all duration-500 ${imageIndexValue === imageIndex ? "scale-125 bg-primary shadow-[var(--glow-violet)]" : "bg-foreground/50"}`}
+              />
+            ))}
+          </div>
         </motion.div>
       </a>
     </div>
