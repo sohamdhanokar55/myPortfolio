@@ -32,13 +32,13 @@ export type MediaImage = { src: string; alt: string };
 /** Update these once official links are ready. */
 export const SOCIALS = {
   linkedin: "https://linkedin.com/in/soham-dhanokar",
-  github: "https://github.com/sohamdhanokar",
-  instagram: "https://instagram.com/soham.dhanokar",
-  portfolio: "https://sohamdhanokar.dev",
+  github: "https://github.com/sohamdhanokar55",
+  instagram: "https://www.instagram.com/sohamz.z.z/",
+  leetcode: "https://leetcode.com/sohamdhanokar",
   email: "hello@sohamdhanokar.dev",
-  phone: "+91 00000 00000",
+  phone: "+91 9321895202",
   location: "Mumbai, India",
-  resume: "/resume.pdf",
+  resume: "/myResume.pdf",
 };
 
 export const ROLES = [
@@ -239,6 +239,12 @@ export const LEADERSHIP = [
 
 export const ACHIEVEMENTS = [
   {
+    title: "Best Paper Award",
+    detail: "1st International Conference on Trends in Management and Engineering Streams — International Winner",
+    images: [{ src: projectCoal, alt: "Best Paper Award - International Conference" }] satisfies MediaImage[],
+    isInternational: true,
+  },
+  {
     title: "Thakur Shyamnarayan Engineering College, Kandivali",
     detail: "First Prize — Technical Paper Presentation",
     images: [{ src: projectCoal, alt: "Technical paper first prize" }] satisfies MediaImage[],
@@ -271,22 +277,23 @@ export const ACHIEVEMENTS = [
 ];
 
 export const RESEARCH = [
+   {
+    title: "Non-Destructive Coal Type Classification Using FT-NIR Spectroscopy and Machine Learning",
+    venue: "Journal Publication",
+    badges: ["Published", "Peer-Reviewed"],
+    summary:
+      "An FT-NIR spectroscopy and machine learning pipeline classifies anthracite, bituminous, and lignite coal from CSV spectra through PCA-based preprocessing and a deployable Flutter-Python API.",
+    href: "https://www.ijfmr.com/research-paper.php?id=69699",
+  },
   {
     title: "AI-Based Coal Quality Classification Using FT-NIR Spectroscopy",
-    venue: "International Conference",
-    badges: ["Published", "Conference", "Winner"],
+    venue: "Journal Publication",
+    badges: ["Published", "Peer-Reviewed"],
     summary:
       "Machine learning models trained on FT-NIR spectral signatures to classify coal grade with industry-grade accuracy, developed in collaboration with an industry partner.",
-    href: "#",
+    href: "https://rjwave.org/jaafr/viewpaperforall.php?paper=JAAFR2603149",
   },
-  {
-    title: "Smart Attendance & Discipline Automation for Institutions",
-    venue: "Journal Publication",
-    badges: ["Published", "Journal"],
-    summary:
-      "A study on digitising manual latecomer registers using barcode identification, real-time cloud sync and automated fine reconciliation.",
-    href: "#",
-  },
+ 
 ];
 
 export const EXPERIENCE = [
@@ -347,12 +354,22 @@ export const SPEAKER_TALKS = [
     audience: "Government college audience",
     detail: "An expert lecture for BMC Government College students on practical skills, real projects, communication and leadership.",
     image: speaker,
+    galleryImages: [
+      { src: speaker, alt: "Speaking at BMC Government College - 1" },
+      { src: projectResonance, alt: "Speaking at BMC Government College - 2" },
+      { src: projectZest, alt: "Speaking at BMC Government College - 3" },
+    ] satisfies MediaImage[],
   },
   {
     title: "A Step-by-Step Guide to Writing and Presenting a Technical Paper",
     audience: "First-Year Diploma Students",
     detail: "A practical walkthrough of choosing a topic, building evidence, structuring a paper and presenting research with confidence.",
     image: projectCoal,
+    galleryImages: [
+      { src: projectCoal, alt: "Technical Paper Presentation - 1" },
+      { src: projectAttendance, alt: "Technical Paper Presentation - 2" },
+      { src: video1, alt: "Technical Paper Presentation - 3" },
+    ] satisfies MediaImage[],
   },
 ] as const;
 
@@ -394,6 +411,33 @@ export const CERTIFICATIONS: Certification[] = [
     issuer: "National Entrepreneurship Challenge",
     year: "2025",
     images: [{ src: speaker, alt: "NEC IIT Bombay certificate" }] satisfies MediaImage[],
+  },
+  {
+    category: "Leadership & Recognition",
+    title: "Nayoda IT Solutions Internship",
+    issuer: "Full Stack Developer Intern Certificate",
+    year: "2025",
+    badge: "Internship",
+    description: "Completed full stack web development internship with production project delivery.",
+    images: [{ src: projectAttendance, alt: "Nayoda IT Solutions certificate" }] satisfies MediaImage[],
+  },
+  {
+    category: "Leadership & Recognition",
+    title: "SmartED Innovations Internship",
+    issuer: "Machine Learning Intern Certificate",
+    year: "2025",
+    badge: "Internship",
+    description: "Completed machine learning internship focusing on model development and deployment.",
+    images: [{ src: projectCoal, alt: "SmartED Innovations certificate" }] satisfies MediaImage[],
+  },
+  {
+    category: "Leadership & Recognition",
+    title: "Stars N Celebs Internship",
+    issuer: "Marketing Intern Certificate",
+    year: "2024",
+    badge: "Internship",
+    description: "Completed marketing internship with content creation and campaign execution.",
+    images: [{ src: speaker, alt: "Stars N Celebs certificate" }] satisfies MediaImage[],
   },
   {
     category: "Research Publications",

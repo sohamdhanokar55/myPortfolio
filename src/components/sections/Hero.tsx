@@ -35,9 +35,9 @@ export function Hero() {
   const typed = useTypewriter(ROLES);
 
   return (
-    <section id="hero" className="relative flex min-h-screen items-center overflow-hidden pt-28">
+    <section id="hero" className="relative flex min-h-screen items-center overflow-hidden pt-28 pb-24">
       <AuroraBackground dense />
-      <div aria-hidden className="pointer-events-none absolute inset-x-0 bottom-0 z-0 h-48 bg-gradient-to-b from-transparent via-primary/10 to-background blur-2xl" />
+      <div aria-hidden className="pointer-events-none absolute inset-x-0 -bottom-48 z-0 h-96 bg-gradient-to-b from-primary/15 via-primary/8 to-transparent blur-3xl" />
       <div className="relative z-10 mx-auto w-full max-w-6xl px-6">
         <motion.p
           initial={{ opacity: 0, y: 16 }}
@@ -107,7 +107,7 @@ export function Hero() {
           </Magnetic>
           <Magnetic>
             <a
-              href={SOCIALS.resume}
+              href={SOCIALS.resume} target="blank"
               className="inline-flex items-center gap-2 rounded-full border border-border px-7 py-3.5 text-sm font-semibold text-muted-foreground transition-colors hover:border-primary/60 hover:text-foreground"
             >
               <Download className="size-4" /> Download Resume

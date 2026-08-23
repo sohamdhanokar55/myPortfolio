@@ -1,8 +1,14 @@
+import { useState } from "react";
 import { Mic, Quote, Users } from "lucide-react";
+import { motion } from "motion/react";
 import { Reveal } from "@/components/effects";
 import { CURSOR, SPEAKER_TALKS } from "@/constants/site";
+import { ExpertLecturePopup } from "@/components/ExpertLecturePopup";
 
 export function Speaking() {
+  const [activeIndex, setActiveIndex] = useState<number | null>(null);
+  const activeTalk = activeIndex !== null ? SPEAKER_TALKS[activeIndex] : null;
+
   return (
     <section id="speaking" className="relative section-pad">
       <div className="mx-auto max-w-6xl px-6">
@@ -16,7 +22,14 @@ export function Speaking() {
         <div className="mt-12 grid gap-6 lg:grid-cols-2">
           {SPEAKER_TALKS.map((talk, index) => (
             <Reveal key={talk.title} delay={0.1 + index * 0.08}>
-              <div data-cursor="On Stage →" className="glass-card h-full overflow-hidden">
+              <motion.button
+                type="button"
+                onClick={() => setActiveIndex(index)}
+                whileHover={{ y: -4 }}
+                transition={{ duration: 0.3 }}
+                data-cursor="View Lecture"
+                className="glass-card h-full w-full overflow-hidden text-left transition-all hover:border-primary/50"
+              >
                 <div className="relative h-56">
                   <img src={talk.image} alt={`${talk.title} lecture`} width={1280} height={800} loading="lazy" className="size-full object-cover" />
                   <div aria-hidden className="pointer-events-none absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent" />
@@ -39,11 +52,19 @@ export function Speaking() {
                 </span>
               </div>
                 </div>
-              </div>
+              </motion.button>
             </Reveal>
           ))}
         </div>
       </div>
+
+      <ExpertLecturePopup
+        open={activeTalk !== null}
+        title={activeTalk?.title ?? ""}
+        detail={activeTalk?.detail ?? ""}
+        images={activeTalk?.galleryImages ?? []}
+        onClose={() => setActiveIndex(null)}
+      />
     </section>
   );
 }

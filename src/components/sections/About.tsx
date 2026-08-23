@@ -39,8 +39,9 @@ const ROLES_LIST = [
 
 export function About() {
   return (
-    <section id="about" className="relative overflow-hidden section-pad">
-      <div aria-hidden className="pointer-events-none absolute inset-x-0 top-0 h-56 -translate-y-1/3 bg-gradient-to-b from-background via-primary/10 to-transparent blur-3xl" />
+    <section id="about" className="relative overflow-hidden section-pad pt-0">
+      <div aria-hidden className="pointer-events-none absolute inset-x-0 -top-48 h-96 bg-gradient-to-b from-transparent via-primary/8 to-background blur-3xl" />
+      <div aria-hidden className="pointer-events-none absolute inset-x-0 top-1/4 h-56 bg-radial-gradient from-primary/10 via-primary/5 to-transparent blur-3xl" style={{ backgroundImage: "radial-gradient(ellipse at center, oklch(0.6 0.1 280 / 0.12) 0%, transparent 70%)" }} />
       <div className="mx-auto grid max-w-6xl gap-14 px-6 lg:grid-cols-[0.85fr_1fr] lg:items-center">
         <Reveal>
           <div data-cursor={CURSOR.photo} className="gradient-border relative overflow-hidden rounded-3xl">

@@ -3,6 +3,8 @@ import { CursorGlow, ScrollProgress, SmoothScroll } from "@/components/effects";
 import { Loader } from "@/components/Loader";
 import { Nav } from "@/components/Nav";
 import { Footer } from "@/components/Footer";
+import { BackToTopButton } from "@/components/BackToTopButton";
+import { ProjectNavigationArrow } from "@/components/ProjectNavigationArrow";
 import { Hero } from "@/components/sections/Hero";
 import { About } from "@/components/sections/About";
 import { Skills } from "@/components/sections/Skills";
@@ -75,12 +77,14 @@ function Index() {
         <Experience />
         <Speaking />
         <VideoWork />
-        <Certifications />
         <Gallery />
+        <Certifications />
         <SocialProof />
         <ContactCTA />
       </main>
       <Footer />
+      <BackToTopButton />
+      <ProjectNavigationArrow />
     </>
   );
 }

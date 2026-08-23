@@ -20,7 +20,7 @@ function MarqueeRow({
       <div
         className="flex w-max gap-4 py-2 group-hover/moments:[animation-play-state:paused]"
         style={{
-          animation: `${reverse ? "ticker-reverse" : "ticker"} 42s linear infinite`,
+          animation: `${reverse ? "ticker-reverse" : "ticker"} 50s linear infinite`,
         }}
       >
         {loop.map((photo, i) => {
@@ -34,14 +34,19 @@ function MarqueeRow({
               aria-label={photo.alt}
               tabIndex={i >= items.length ? -1 : 0}
               className={cn(
-                "relative h-44 w-[min(85vw,calc((min(72rem,100vw)-3.5rem)/3))] shrink-0 overflow-hidden rounded-2xl border border-border",
-                "transition-transform duration-500 hover:z-10 hover:scale-[1.04] hover:border-primary/50 hover:shadow-[var(--glow-soft)]",
+                "relative h-60 w-[min(85vw,calc((min(72rem,100vw)-2rem)/3))] shrink-0 overflow-hidden rounded-2xl border border-border",
+                "transition-all duration-300 hover:z-10 hover:scale-105 hover:border-primary/50 hover:shadow-[var(--glow-soft)] group",
               )}
             >
               <img src={photo.src} alt="" className="size-full object-cover" />
               <span
                 aria-hidden
-                className="pointer-events-none absolute inset-0 bg-primary/0 transition-colors duration-500 hover:bg-primary/10"
+                className="pointer-events-none absolute inset-0 bg-gradient-to-t from-background/40 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+              />
+              <span
+                aria-hidden
+                className="absolute inset-0 bg-gradient-radial from-primary/0 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-20"
+                style={{ backgroundImage: "radial-gradient(circle at center, oklch(0.6 0.2 280 / 0.3) 0%, transparent 70%)" }}
               />
             </button>
           );

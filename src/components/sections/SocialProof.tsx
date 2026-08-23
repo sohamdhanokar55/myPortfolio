@@ -1,4 +1,4 @@
-import { Github, Globe, Instagram, Linkedin, Mail } from "lucide-react";
+import { Github, Code2, Instagram, Linkedin, Mail } from "lucide-react";
 import { Reveal } from "@/components/effects";
 import { CURSOR, SOCIALS } from "@/constants/site";
 
@@ -6,12 +6,12 @@ const ITEMS = [
   { Icon: Linkedin, label: "LinkedIn", meta: "Connect", href: SOCIALS.linkedin },
   { Icon: Github, label: "GitHub", meta: "Follow", href: SOCIALS.github },
   { Icon: Instagram, label: "Instagram", meta: "Follow", href: SOCIALS.instagram },
-  { Icon: Globe, label: "Portfolio", meta: "Visit", href: SOCIALS.portfolio },
+  { Icon: Code2, label: "LeetCode", meta: "Solve", href: SOCIALS.leetcode },
   { Icon: Mail, label: "Email", meta: "Say hello", href: `mailto:${SOCIALS.email}` },
 ];
 
 export function SocialProof() {
-  const loop = [...ITEMS, ...ITEMS];
+  const loop = [...ITEMS, ...ITEMS, ...ITEMS];
   return (
     <section id="social" className="relative section-pad">
       <div className="mx-auto max-w-6xl px-6">
@@ -21,7 +21,7 @@ export function SocialProof() {
       </div>
 
       <div className="relative mt-10 overflow-hidden py-2" aria-label="Social profiles">
-        <div className="flex w-max gap-5" style={{ animation: "ticker 32s linear infinite" }}>
+        <div className="flex w-max gap-5" style={{ animation: "ticker 48s linear infinite" }}>
           {loop.map(({ Icon, label, meta, href }, i) => (
             <a
               key={`${label}-${i}`}
@@ -31,7 +31,7 @@ export function SocialProof() {
               aria-hidden={i >= ITEMS.length}
               tabIndex={i >= ITEMS.length ? -1 : 0}
               data-cursor={CURSOR.social}
-              className="glass-card flex w-64 items-center gap-4 p-6"
+              className="glass-card flex w-64 shrink-0 items-center gap-4 p-6"
             >
               <span className="flex size-11 items-center justify-center rounded-2xl border border-primary/40 bg-primary/10">
                 <Icon className="size-5 text-primary" />

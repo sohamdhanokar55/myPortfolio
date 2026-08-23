@@ -1,3 +1,4 @@
+import { motion } from "motion/react";
 import { Reveal } from "@/components/effects";
 import { CURSOR, EXPERIENCE } from "@/constants/site";
 
@@ -31,8 +32,12 @@ export function Experience() {
                     className="absolute left-4 top-8 z-10 size-3 -translate-x-1/2 rounded-full neon-pulse md:left-1/2"
                     style={{ background: "var(--gradient-brand)" }}
                   />
-                  <article
-                    data-cursor={CURSOR.experience}
+                  <motion.article
+                    whileHover={{
+                      y: -8,
+                      boxShadow: "var(--glow-soft)",
+                    }}
+                    transition={{ duration: 0.3, ease: [0.34, 1.56, 0.64, 1] }}
                     className={`glass-card ml-10 p-7 md:ml-0 md:w-[calc(50%-2rem)] ${left ? "md:mr-auto" : "md:ml-auto"}`}
                   >
                     <p className="font-display text-xs tracking-[0.35em] text-primary">{e.year}</p>
@@ -55,7 +60,7 @@ export function Experience() {
                         </li>
                       ))}
                     </ul>
-                  </article>
+                  </motion.article>
                 </Reveal>
               );
             })}

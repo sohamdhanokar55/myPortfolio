@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Trophy } from "lucide-react";
+import { motion } from "motion/react";
 import { Reveal } from "@/components/effects";
 import { ImageLightbox } from "@/components/ImageLightbox";
 import { ACHIEVEMENTS, CURSOR } from "@/constants/site";
@@ -7,6 +8,8 @@ import { ACHIEVEMENTS, CURSOR } from "@/constants/site";
 export function Achievements() {
   const [active, setActive] = useState<number | null>(null);
   const current = active === null ? null : ACHIEVEMENTS[active];
+  const international = ACHIEVEMENTS[0];
+  const rest = ACHIEVEMENTS.slice(1);
 
   return (
     <section id="achievements" className="relative section-pad">
@@ -18,14 +21,48 @@ export function Achievements() {
           </h2>
         </Reveal>
 
+        <Reveal delay={0.1}>
+          <motion.button
+            type="button"
+            data-cursor={CURSOR.recognition}
+            onClick={() => setActive(0)}
+            whileHover={{ y: -4, scale: 1.02 }}
+            transition={{ duration: 0.3 }}
+            className="mt-14 w-full overflow-hidden rounded-3xl border-2 border-primary/40 p-8 text-left sm:p-10"
+            style={{
+              background: "linear-gradient(135deg, oklch(0.15 0.04 280 / 0.8) 0%, oklch(0.14 0.02 320 / 0.6) 100%)",
+              boxShadow: "0 0 60px oklch(0.6 0.2 280 / 0.15), inset 0 0 40px oklch(0.6 0.1 280 / 0.1)",
+            }}
+          >
+            <div className="flex items-start justify-between gap-4">
+              <div>
+                <span className="inline-flex items-center gap-2 rounded-full border border-yellow-500/40 bg-yellow-500/10 px-3 py-1.5 text-[10px] uppercase tracking-widest text-yellow-500">
+                  <Trophy className="size-3.5" /> International Winner
+                </span>
+                <h3 className="mt-6 font-display text-2xl font-bold sm:text-3xl">{international?.title}</h3>
+                <p className="mt-3 text-sm text-muted-foreground/80 sm:text-base">{international?.detail}</p>
+                <p className="mt-4 text-xs text-muted-foreground">Dattakala Group of Institutions, Pune • In association with University of Science and Technology, Southern Philippines</p>
+              </div>
+              <motion.span
+                animate={{ y: [0, -6, 0] }}
+                transition={{ duration: 2, repeat: Infinity }}
+                className="flex size-16 shrink-0 items-center justify-center rounded-2xl text-3xl"
+                style={{ background: "linear-gradient(135deg, oklch(0.8 0.25 45) 0%, oklch(0.7 0.2 50) 100%)" }}
+              >
+                🏆
+              </motion.span>
+            </div>
+          </motion.button>
+        </Reveal>
+
         <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {ACHIEVEMENTS.map((a, i) => (
-            <Reveal key={a.title} delay={i * 0.06}>
+          {rest.map((a, i) => (
+            <Reveal key={a.title} delay={0.15 + i * 0.06}>
               <button
                 type="button"
                 data-cursor={CURSOR.recognition}
-                onClick={() => setActive(i)}
-                className="glass-card h-full w-full p-7 text-left"
+                onClick={() => setActive(i + 1)}
+                className="glass-card h-full w-full p-7 text-left transition-all hover:border-primary/50"
               >
                 <span
                   className="inline-flex size-11 items-center justify-center rounded-2xl"
