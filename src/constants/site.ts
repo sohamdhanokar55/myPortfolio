@@ -351,6 +351,46 @@ export const EXPERIENCE = [
   },
 ];
 
+export interface Education {
+  institution: string;
+  logo?: string;
+  degree: string;
+  field?: string;
+  startDate: string;
+  endDate: string;
+  grade?: string;
+  activities?: string[];
+  roles?: string[];
+  institutionUrl?: string;
+}
+
+export const EDUCATION: Education[] = [
+  {
+    institution: "Vidyalankar Institute of Technology, Mumbai",
+    degree: "Bachelor of Technology",
+    field: "Electronics and Computer Science",
+    startDate: "Date not provided",
+    endDate: "Pursuing",
+    activities: ["Engineering projects", "Technical research"],
+  },
+  {
+    institution: "Agnel Polytechnic, Vashi",
+    degree: "Diploma of Education",
+    field: "Artificial Intelligence",
+    startDate: "Date not provided",
+    endDate: "Completed",
+    grade: "91.82%",
+    activities: ["Technical paper presentations", "Artificial intelligence projects"],
+  },
+  {
+    institution: "Presentation Convent School",
+    degree: "Indian Certificate of Secondary Education",
+    startDate: "Date not provided",
+    endDate: "Completed",
+    grade: "87%",
+  },
+];
+
 export const GALLERY: MediaImage[] = [
   { src: profile, alt: "Behind the scenes portrait" },
   { src: speaker, alt: "On stage at a lecture" },

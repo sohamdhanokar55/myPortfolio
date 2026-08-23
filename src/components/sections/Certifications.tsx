@@ -48,7 +48,7 @@ export function Certifications() {
         images={current?.images ?? []}
         title={current?.title}
         onClose={() => setActive(null)}
-        mode="slider"
+        mode="single"
         autoPlayInterval={3000}
       />
     </section>

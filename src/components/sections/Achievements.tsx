@@ -22,10 +22,14 @@ export function Achievements() {
         </Reveal>
 
         <Reveal delay={0.1}>
-          <motion.button
-            type="button"
+          <motion.article
+            role="button"
+            tabIndex={0}
             data-cursor={CURSOR.recognition}
             onClick={() => setActive(0)}
+            onKeyDown={(event) => {
+              if (event.key === "Enter" || event.key === " ") setActive(0);
+            }}
             whileHover={{ y: -4, scale: 1.02 }}
             transition={{ duration: 0.3 }}
             className="mt-14 w-full overflow-hidden rounded-3xl border-2 border-primary/40 p-8 text-left sm:p-10"
@@ -62,15 +66,21 @@ export function Achievements() {
                 🏆
               </motion.span>
             </div>
-          </motion.button>
+          </motion.article>
         </Reveal>
 
         <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {rest.map((a, i) => (
             <Reveal key={a.title} delay={0.15 + i * 0.06}>
               <article
+                role="button"
+                tabIndex={0}
                 data-cursor={CURSOR.recognition}
-                className="glass-card h-full w-full p-7 text-left transition-all hover:border-primary/50"
+                onClick={() => setActive(i + 1)}
+                onKeyDown={(event) => {
+                  if (event.key === "Enter" || event.key === " ") setActive(i + 1);
+                }}
+                className="glass-card h-full w-full cursor-pointer p-7 text-left transition-all hover:border-primary/50"
               >
                 <span
                   className="inline-flex size-11 items-center justify-center rounded-2xl"
@@ -84,7 +94,10 @@ export function Achievements() {
                 <div className="mt-6 flex flex-wrap items-center gap-3">
                   <button
                     type="button"
-                    onClick={() => setActive(i + 1)}
+                    onClick={(event) => {
+                      event.stopPropagation();
+                      setActive(i + 1);
+                    }}
                     className="rounded-full border border-border px-4 py-2 text-xs text-muted-foreground transition-colors hover:border-primary/50 hover:text-primary"
                   >
                     View images
@@ -94,6 +107,7 @@ export function Achievements() {
                       href={a.linkedinUrl}
                       data-cursor="Share the Win"
                       className="inline-flex items-center gap-2 rounded-full border border-primary/40 bg-primary/10 px-4 py-2 text-xs text-primary transition-colors hover:bg-primary/20"
+                      onClick={(event) => event.stopPropagation()}
                     >
                       <Linkedin className="size-3.5" /> LinkedIn post
                     </a>
@@ -110,7 +124,7 @@ export function Achievements() {
         images={current?.images ?? []}
         title={current?.title}
         onClose={() => setActive(null)}
-        mode="triple"
+        mode="pair"
       />
     </section>
   );

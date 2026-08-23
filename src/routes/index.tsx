@@ -14,6 +14,7 @@ import { Achievements } from "@/components/sections/Achievements";
 import { Research } from "@/components/sections/Research";
 import { Experience } from "@/components/sections/Experience";
 import { Speaking } from "@/components/sections/Speaking";
+import { Education } from "@/components/sections/Education";
 import { VideoWork } from "@/components/sections/VideoWork";
 import { Certifications } from "@/components/sections/Certifications";
 import { Gallery } from "@/components/sections/Gallery";
@@ -77,6 +78,7 @@ function Index() {
         <Experience />
         <Speaking />
         <VideoWork />
+        <Education />
         <Gallery />
         <Certifications />
         <SocialProof />

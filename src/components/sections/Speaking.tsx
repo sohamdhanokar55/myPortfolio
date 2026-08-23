@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Mic, Quote, Users } from "lucide-react";
+import { Linkedin, Mic, Quote, Users } from "lucide-react";
 import { motion } from "motion/react";
 import { Reveal } from "@/components/effects";
 import { ImageGalleryModal } from "@/components/ImageGalleryModal";
@@ -22,9 +22,13 @@ export function Speaking() {
         <div className="mt-12 grid gap-6 lg:grid-cols-2">
           {SPEAKER_TALKS.map((talk, index) => (
             <Reveal key={talk.title} delay={0.1 + index * 0.08}>
-              <motion.button
-                type="button"
+              <motion.div
+                role="button"
+                tabIndex={0}
                 onClick={() => setActiveIndex(index)}
+                onKeyDown={(event) => {
+                  if (event.key === "Enter" || event.key === " ") setActiveIndex(index);
+                }}
                 data-cursor="Behind the Mic"
                 whileHover={{ y: -4 }}
                 transition={{ duration: 0.3 }}
@@ -51,9 +55,21 @@ export function Speaking() {
                   <Mic className="size-3.5 text-primary" /> Invited speaker
                 </span>
               </div>
+              {talk.linkedinUrl && (
+                <a
+                  href={talk.linkedinUrl}
+                  data-cursor="See Me On Stage"
+                  onClick={(event) => {
+                    event.stopPropagation();
+                  }}
+                  className="mt-6 inline-flex items-center gap-2 rounded-full border border-primary/40 bg-primary/10 px-4 py-2 text-sm text-primary transition-all hover:-translate-y-1 hover:bg-primary/20 hover:shadow-[var(--glow-soft)]"
+                >
+                  <Linkedin className="size-4" /> View the Lecture Story
+                </a>
+              )}
 
                 </div>
-              </motion.button>
+              </motion.div>
             </Reveal>
           ))}
         </div>
