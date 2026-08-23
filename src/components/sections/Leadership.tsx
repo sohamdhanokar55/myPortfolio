@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { BadgeCheck } from "lucide-react";
 import { Reveal } from "@/components/effects";
-import { ImageLightbox } from "@/components/ImageLightbox";
+import { ImageGalleryModal } from "@/components/ImageGalleryModal";
 import { CURSOR, LEADERSHIP } from "@/constants/site";
 
 export function Leadership() {
@@ -49,11 +49,12 @@ export function Leadership() {
         </ol>
       </div>
 
-      <ImageLightbox
+      <ImageGalleryModal
         open={Boolean(current)}
         images={current?.images ?? []}
         title={current ? `${current.role} — ${current.org}` : undefined}
         onClose={() => setActive(null)}
+        mode="pair"
       />
     </section>
   );

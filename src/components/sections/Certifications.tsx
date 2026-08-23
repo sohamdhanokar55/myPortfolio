@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Award, BookOpen, Medal, PersonStanding, Trophy } from "lucide-react";
 import { Reveal } from "@/components/effects";
-import { ImageLightbox } from "@/components/ImageLightbox";
+import { ImageGalleryModal } from "@/components/ImageGalleryModal";
 import { CERTIFICATIONS, CURSOR, type Certification } from "@/constants/site";
 
 const categoryIcons = {
@@ -43,11 +43,13 @@ export function Certifications() {
         </div>
       </div>
 
-      <ImageLightbox
+      <ImageGalleryModal
         open={Boolean(current)}
         images={current?.images ?? []}
         title={current?.title}
         onClose={() => setActive(null)}
+        mode="slider"
+        autoPlayInterval={3000}
       />
     </section>
   );

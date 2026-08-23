@@ -2,8 +2,8 @@ import { useState } from "react";
 import { Mic, Quote, Users } from "lucide-react";
 import { motion } from "motion/react";
 import { Reveal } from "@/components/effects";
-import { CURSOR, SPEAKER_TALKS } from "@/constants/site";
-import { ExpertLecturePopup } from "@/components/ExpertLecturePopup";
+import { ImageGalleryModal } from "@/components/ImageGalleryModal";
+import { SPEAKER_TALKS } from "@/constants/site";
 
 export function Speaking() {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
@@ -25,9 +25,9 @@ export function Speaking() {
               <motion.button
                 type="button"
                 onClick={() => setActiveIndex(index)}
+                data-cursor="Behind the Mic"
                 whileHover={{ y: -4 }}
                 transition={{ duration: 0.3 }}
-                data-cursor="View Lecture"
                 className="glass-card h-full w-full overflow-hidden text-left transition-all hover:border-primary/50"
               >
                 <div className="relative h-56">
@@ -51,6 +51,7 @@ export function Speaking() {
                   <Mic className="size-3.5 text-primary" /> Invited speaker
                 </span>
               </div>
+
                 </div>
               </motion.button>
             </Reveal>
@@ -58,12 +59,12 @@ export function Speaking() {
         </div>
       </div>
 
-      <ExpertLecturePopup
+      <ImageGalleryModal
         open={activeTalk !== null}
-        title={activeTalk?.title ?? ""}
-        detail={activeTalk?.detail ?? ""}
+        title={activeTalk?.title}
         images={activeTalk?.galleryImages ?? []}
         onClose={() => setActiveIndex(null)}
+        mode="six"
       />
     </section>
   );

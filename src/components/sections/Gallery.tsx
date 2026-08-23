@@ -1,6 +1,6 @@
 import { useMemo, useState } from "react";
 import { Reveal } from "@/components/effects";
-import { ImageLightbox } from "@/components/ImageLightbox";
+import { ImageGalleryModal } from "@/components/ImageGalleryModal";
 import { CURSOR, GALLERY } from "@/constants/site";
 import { cn } from "@/lib/utils";
 
@@ -81,12 +81,13 @@ export function Gallery() {
         />
       </div>
 
-      <ImageLightbox
+      <ImageGalleryModal
         open={open !== null}
         images={GALLERY}
-        startIndex={open ?? 0}
         title="Behind the scenes"
         onClose={() => setOpen(null)}
+        mode="slider"
+        autoPlayInterval={3000}
       />
     </section>
   );

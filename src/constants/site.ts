@@ -116,6 +116,7 @@ export type Project = {
   note?: string;
   demo: string;
   github: string;
+  linkedinUrl?: string;
   flagship?: boolean;
   accent: string;
 };
@@ -135,6 +136,7 @@ export const PROJECTS: Project[] = [
     note: "Officially recognised with a certificate by the institution.",
     demo: "#",
     github: "https://github.com/sohamdhanokar55/new-late-comers-next",
+    linkedinUrl: "#",
     flagship: true,
     accent: "oklch(0.58 0.24 292 / 35%)",
   },
@@ -151,6 +153,7 @@ export const PROJECTS: Project[] = [
     ],
     demo: "#",
     github: "https://github.com/sohamdhanokar55/resonance26.git",
+    linkedinUrl: "#",
     accent: "oklch(0.66 0.2 250 / 32%)",
   },
   {
@@ -166,6 +169,7 @@ export const PROJECTS: Project[] = [
     ],
     demo: "#",
     github: "https://github.com/sohamdhanokar55/zest25",
+    linkedinUrl: "#",
     accent: "oklch(0.62 0.26 305 / 32%)",
   },
   {
@@ -182,6 +186,7 @@ export const PROJECTS: Project[] = [
     note: "Research-backed, developed with industry collaboration.",
     demo: "#",
     github: "https://github.com/cppgroup04-ai/final_cpp.git",
+    linkedinUrl: "#",
     accent: "oklch(0.7 0.14 80 / 28%)",
   },
 ];
@@ -202,6 +207,7 @@ export const LEADERSHIP = [
     detail:
       "Heading the entrepreneurship cell — building startup culture on campus through speaker sessions, pitch events and mentorship drives.",
     badge: "Certificate Received",
+    linkedinUrl: "#",
     images: [
       { src: speaker, alt: "APV E-Cell President" },
       { src: projectResonance, alt: "E-Cell session" },
@@ -215,6 +221,7 @@ export const LEADERSHIP = [
     detail:
       "Led operations and committee management across flagship events, owning planning, logistics and cross-team execution.",
     badge: "Certificate Received",
+    linkedinUrl: "#",
     images: [
       { src: projectZest, alt: "OCM Head operations" },
       { src: video2, alt: "Event floor moments" },
@@ -228,6 +235,7 @@ export const LEADERSHIP = [
     detail:
       "Coordinated technical events, managed volunteer teams and drove the technical execution of college-wide programmes.",
     badge: "Council",
+    linkedinUrl: "#",
     images: [
       { src: asstaward, alt: "Technical events and council work" },
       { src: asstcertificate , alt: "Campus technical programme" },
@@ -242,37 +250,44 @@ export const ACHIEVEMENTS = [
     title: "Best Paper Award",
     detail: "1st International Conference on Trends in Management and Engineering Streams — International Winner",
     images: [{ src: projectCoal, alt: "Best Paper Award - International Conference" }] satisfies MediaImage[],
+    linkedinUrl: "#",
     isInternational: true,
   },
   {
     title: "Thakur Shyamnarayan Engineering College, Kandivali",
     detail: "First Prize — Technical Paper Presentation",
     images: [{ src: projectCoal, alt: "Technical paper first prize" }] satisfies MediaImage[],
+    linkedinUrl: "#",
   },
   {
     title: "Shivajirao S. Jondhle Polytechnic, Asangaon",
     detail: "First Prize — State Level Technical Paper Presentation",
     images: [{ src: projectAttendance, alt: "National winner recognition" }] satisfies MediaImage[],
+    linkedinUrl: "#",
   },
   {
     title: "Fr. C. Rodrigues Institute of Technology (FCRIT), Vashi",
     detail: "First Prize — National Level Technical Paper Presentation",
     images: [{ src: projectCoal, alt: "International conference winner" }] satisfies MediaImage[],
+    linkedinUrl: "#",
   },
   {
     title: "AR Kalsekar Polytechnic",
     detail: "First Prize — Technical Paper Presentation",
     images: [{ src: asstaward, alt: "AR Kalsekar Polytechnic first prize" }] satisfies MediaImage[],
+    linkedinUrl: "#",
   },
   {
     title: "Agnel Polytechnic, Vashi (Technocratz)",
     detail: "First Prize — State-Level Technical Paper Presentation (Artificial Intelligence)",
     images: [{ src: projectCoal, alt: "Agnel Polytechnic Technocratz first prize" }] satisfies MediaImage[],
+    linkedinUrl: "#",
   },
   {
     title: "KJ Somaiya Polytechnic, Vidyavihar",
     detail: "First Prize — Clue Chronicle Technical Competition",
     images: [{ src: asstaward, alt: "KJ Somaiya Polytechnic first prize" }] satisfies MediaImage[],
+    linkedinUrl: "#",
   },
 ];
 
@@ -284,6 +299,8 @@ export const RESEARCH = [
     summary:
       "An FT-NIR spectroscopy and machine learning pipeline classifies anthracite, bituminous, and lignite coal from CSV spectra through PCA-based preprocessing and a deployable Flutter-Python API.",
     href: "https://www.ijfmr.com/research-paper.php?id=69699",
+    linkedinUrl: "#",
+    publicationUrl: "https://www.ijfmr.com/research-paper.php?id=69699",
   },
   {
     title: "AI-Based Coal Quality Classification Using FT-NIR Spectroscopy",
@@ -292,6 +309,8 @@ export const RESEARCH = [
     summary:
       "Machine learning models trained on FT-NIR spectral signatures to classify coal grade with industry-grade accuracy, developed in collaboration with an industry partner.",
     href: "https://rjwave.org/jaafr/viewpaperforall.php?paper=JAAFR2603149",
+    linkedinUrl: "#",
+    publicationUrl: "https://rjwave.org/jaafr/viewpaperforall.php?paper=JAAFR2603149",
   },
  
 ];
@@ -305,6 +324,7 @@ export const EXPERIENCE = [
     tech: ["Next.js", "TypeScript", "Firebase"],
     contribution: "Owned client-facing products from UI through APIs to deployment — shipping sites that real businesses used.",
     achievement: "Production web apps delivered end to end with performance tuning.",
+    linkedinUrl: "#",
     initials: "NI",
   },
   {
@@ -315,6 +335,7 @@ export const EXPERIENCE = [
     tech: ["Python", "TensorFlow", "FastAPI"],
     contribution: "Turned raw datasets into evaluated models and prediction pipelines the team could actually run.",
     achievement: "Experiments converted into usable ML outputs, not just notebooks.",
+    linkedinUrl: "#",
     initials: "SE",
   },
   {
@@ -325,6 +346,7 @@ export const EXPERIENCE = [
     tech: ["Premiere Pro", "Content", "Growth"],
     contribution: "Built campaign creative and edited motion content that helped talent brands grow their audience.",
     achievement: "Story-led edits and experiments that lifted engagement.",
+    linkedinUrl: "#",
     initials: "SC",
   },
 ];
@@ -354,10 +376,14 @@ export const SPEAKER_TALKS = [
     audience: "Government college audience",
     detail: "An expert lecture for BMC Government College students on practical skills, real projects, communication and leadership.",
     image: speaker,
+    linkedinUrl: "#",
     galleryImages: [
       { src: speaker, alt: "Speaking at BMC Government College - 1" },
       { src: projectResonance, alt: "Speaking at BMC Government College - 2" },
       { src: projectZest, alt: "Speaking at BMC Government College - 3" },
+      { src: video1, alt: "Speaking at BMC Government College - 4" },
+      { src: video2, alt: "Speaking at BMC Government College - 5" },
+      { src: projectAttendance, alt: "Speaking at BMC Government College - 6" },
     ] satisfies MediaImage[],
   },
   {
@@ -365,10 +391,14 @@ export const SPEAKER_TALKS = [
     audience: "First-Year Diploma Students",
     detail: "A practical walkthrough of choosing a topic, building evidence, structuring a paper and presenting research with confidence.",
     image: projectCoal,
+    linkedinUrl: "#",
     galleryImages: [
       { src: projectCoal, alt: "Technical Paper Presentation - 1" },
       { src: projectAttendance, alt: "Technical Paper Presentation - 2" },
       { src: video1, alt: "Technical Paper Presentation - 3" },
+      { src: speaker, alt: "Technical Paper Presentation - 4" },
+      { src: projectResonance, alt: "Technical Paper Presentation - 5" },
+      { src: video2, alt: "Technical Paper Presentation - 6" },
     ] satisfies MediaImage[],
   },
 ] as const;

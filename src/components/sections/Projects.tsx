@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion, useMotionValueEvent, useScroll } from "motion/react";
-import { ArrowUpRight, Github, Sparkles } from "lucide-react";
+import { ArrowUpRight, Github, Linkedin, Sparkles } from "lucide-react";
 import { Reveal } from "@/components/effects";
 import { CURSOR, PROJECTS, PROJECT_FILTERS, type Project } from "@/constants/site";
 import { cn } from "@/lib/utils";
@@ -88,6 +88,15 @@ function ProjectScene({ project, index, total }: { project: Project; index: numb
           >
             <Github className="size-4" /> GitHub
           </a>
+          {project.linkedinUrl && (
+            <a
+              href={project.linkedinUrl}
+              className="glass inline-flex items-center gap-1.5 rounded-full px-5 py-2.5 text-sm font-medium transition-colors hover:text-primary"
+              data-cursor="Share the Story →"
+            >
+              <Linkedin className="size-4" /> LinkedIn
+            </a>
+          )}
         </motion.div>
       </div>
 
