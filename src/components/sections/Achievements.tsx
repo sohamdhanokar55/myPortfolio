@@ -124,7 +124,7 @@ export function Achievements() {
         images={current?.images ?? []}
         title={current?.title}
         onClose={() => setActive(null)}
-        mode="pair"
+        mode="triple"
       />
     </section>
   );

@@ -1,15 +1,32 @@
 import projectAttendance from "@/assets/project-attendance.webp";
+import projectAttendance1 from "@/assets/project-attendance1.webp";
+import projectAttendance2 from "@/assets/project-attendance2.webp";
 import projectResonance from "@/assets/project-resonance.webp";
+import projectResonance1 from "@/assets/projectResonance1.webp";
+import projectResonance2 from "@/assets/projectResonance2.webp";
 import projectZest from "@/assets/project-zest.webp";
+import projectZest1 from "@/assets/projectzest1.webp";
+import projectZest2 from "@/assets/projectzest2.webp";
 import projectCoal from "@/assets/project-coal.webp";
+import projectCoal1 from "@/assets/project-coal1.webp";
+import projectCoal2 from "@/assets/project-coal2.webp";
 import projectEwaste from "@/assets/project-ewaste.jpg";
+import dogi1 from "@/assets/Achievements/dogi-1.webp";
+import dogi2 from "@/assets/Achievements/dogi-2.webp";
+import dogi3 from "@/assets/Achievements/dogi-3.webp";
+import dogicerti from "@/assets/Achievements/dogi-certi.webp";
+import fcritAward from "@/assets/Achievements/FCRIT.webp";
+import ecellCerti from "@/assets/Leadership/President-Certificate.webp";
+import lateComers from "@/assets/Certifications/latecomers.webp";
+import ocmAward from "@/assets/Leadership/ocmAward.webp";
+import ocmCerti from "@/assets/Leadership/ocmCerti.webp";
 import video1 from "@/assets/video-1.jpg";
 import video2 from "@/assets/video-2.jpg";
 import video3 from "@/assets/video-3.jpg";
 import profile from "@/assets/profile.jpg";
 
-import asstcertificate from "@/assets/asstcertificate.webp";
-import asstaward from "@/assets/asstaward.webp";
+import asstcertificate from "@/assets/Leadership/asstcertificate.webp";
+import asstaward from "@/assets/Leadership/asstaward.webp";
 import speaker from "@/assets/speaker.jpg";
 
 export const CURSOR = {
@@ -130,8 +147,8 @@ export const PROJECTS: Project[] = [
     stack: ["Next.js", "Firebase", "Barcode Scanning", "Fine Management", "Excel Export", "Google Sheets API"],
     images: [
       { src: projectAttendance, alt: "Late Comers Attendance Management System" },
-      { src: projectZest, alt: "Late Comers system dashboard" },
-      { src: projectAttendance, alt: "Late Comers system records" },
+      { src: projectAttendance1, alt: "Late Comers system dashboard" },
+      { src: projectAttendance2, alt: "Late Comers system records" },
     ],
     note: "Officially recognised with a certificate by the institution.",
     demo: "#",
@@ -148,8 +165,8 @@ export const PROJECTS: Project[] = [
     stack: ["Next.js", "Framer Motion", "GSAP", "Tailwind CSS"],
     images: [
       { src: projectResonance, alt: "APV Resonance 2026 website" },
-      { src: speaker, alt: "APV Resonance 2026 event" },
-      { src: projectResonance, alt: "APV Resonance 2026 schedule" },
+      { src: projectResonance1, alt: "APV Resonance 2026 event" },
+      { src: projectResonance2, alt: "APV Resonance 2026 schedule" },
     ],
     demo: "#",
     github: "https://github.com/sohamdhanokar55/resonance26.git",
@@ -164,8 +181,8 @@ export const PROJECTS: Project[] = [
     stack: ["React", "Razorpay", "Firebase", "Node.js"],
     images: [
       { src: projectZest, alt: "Zest 2026 event platform" },
-      { src: projectAttendance, alt: "Zest 2026 registration flow" },
-      { src: projectZest, alt: "Zest 2026 ticketing experience" },
+      { src: projectZest1, alt: "Zest 2026 registration flow" },
+      { src: projectZest2, alt: "Zest 2026 ticketing experience" },
     ],
     demo: "#",
     github: "https://github.com/sohamdhanokar55/zest25",
@@ -180,8 +197,8 @@ export const PROJECTS: Project[] = [
     stack: ["Python", "TensorFlow", "FT-NIR", "FastAPI"],
     images: [
       { src: projectCoal, alt: "AI-based coal classification system" },
-      { src: projectAttendance, alt: "Coal classification prediction pipeline" },
-      { src: projectCoal, alt: "FT-NIR research system" },
+      { src: projectCoal1, alt: "Coal classification prediction pipeline" },
+      { src: projectCoal2, alt: "FT-NIR research system" },
     ],
     note: "Research-backed, developed with industry collaboration.",
     demo: "#",
@@ -209,9 +226,9 @@ export const LEADERSHIP = [
     badge: "Certificate Received",
     linkedinUrl: "#",
     images: [
-      { src: speaker, alt: "APV E-Cell President" },
-      { src: projectResonance, alt: "E-Cell session" },
-      { src: video1, alt: "President certificate placeholder" },
+      { src: ecellCerti, alt: "APV E-Cell President" },
+      // { src: projectResonance, alt: "E-Cell session" },
+      // { src: video1, alt: "President certificate placeholder" },
     ] satisfies MediaImage[],
   },
   {
@@ -223,9 +240,9 @@ export const LEADERSHIP = [
     badge: "Certificate Received",
     linkedinUrl: "#",
     images: [
-      { src: projectZest, alt: "OCM Head operations" },
-      { src: video2, alt: "Event floor moments" },
-      { src: speaker, alt: "OCM Head certificate placeholder" },
+      { src: ocmAward, alt: "OCM Head operations" },
+      { src: ocmCerti, alt: "Event floor moments" },
+      // { src: speaker, alt: "OCM Head certificate placeholder" },
     ] satisfies MediaImage[],
   },
   {
@@ -237,8 +254,8 @@ export const LEADERSHIP = [
     badge: "Council",
     linkedinUrl: "#",
     images: [
-      { src: asstaward, alt: "Technical events and council work" },
       { src: asstcertificate , alt: "Campus technical programme" },
+      { src: asstaward, alt: "Technical events and council work" },
     ] satisfies MediaImage[],
   },
   
@@ -249,13 +266,13 @@ export const ACHIEVEMENTS = [
   {
     title: "Best Paper Award",
     detail: "1st International Conference on Trends in Management and Engineering Streams — International Winner",
-    images: [{ src: projectCoal, alt: "Best Paper Award - International Conference" }] satisfies MediaImage[],
+    images: [{ src: dogi2, alt: "Best Paper Award - International Conference" }, { src: dogi3, alt: "Best Paper Award - International Conference" }, { src: dogi1, alt: "Best Paper Award - International Conference" }, { src: dogicerti, alt: "Best Paper Award - Certificate" }] satisfies MediaImage[],
     linkedinUrl: "#",
     isInternational: true,
   },
   {
     title: "Thakur Shyamnarayan Engineering College, Kandivali",
-    detail: "First Prize — Technical Paper Presentation",
+    detail: "First Prize — State Level Technical Paper Presentation",
     images: [{ src: projectCoal, alt: "Technical paper first prize" }] satisfies MediaImage[],
     linkedinUrl: "#",
   },
@@ -272,13 +289,13 @@ export const ACHIEVEMENTS = [
     linkedinUrl: "#",
   },
   {
-    title: "AR Kalsekar Polytechnic",
-    detail: "First Prize — Technical Paper Presentation",
+    title: "AR Kalsekar Polytechnic, Panvel",
+    detail: "First Prize — State LevelTechnical Paper Presentation",
     images: [{ src: asstaward, alt: "AR Kalsekar Polytechnic first prize" }] satisfies MediaImage[],
     linkedinUrl: "#",
   },
   {
-    title: "Agnel Polytechnic, Vashi (Technocratz)",
+    title: "Agnel Polytechnic, (Technocratz)",
     detail: "First Prize — State-Level Technical Paper Presentation (Artificial Intelligence)",
     images: [{ src: projectCoal, alt: "Agnel Polytechnic Technocratz first prize" }] satisfies MediaImage[],
     linkedinUrl: "#",
