@@ -14,8 +14,23 @@ import projectEwaste from "@/assets/project-ewaste.jpg";
 import dogi1 from "@/assets/Achievements/dogi-1.webp";
 import dogi2 from "@/assets/Achievements/dogi-2.webp";
 import dogi3 from "@/assets/Achievements/dogi-3.webp";
+import jondhale2 from "@/assets/Achievements/Jondhale-2.webp";
+import jondhale1 from "@/assets/Achievements/Jondhale-1.webp";
+import jondhale3 from "@/assets/Achievements/Jondhale-3.webp";
 import dogicerti from "@/assets/Achievements/dogi-certi.webp";
-import fcritAward from "@/assets/Achievements/FCRIT.webp";
+import president from "@/assets/Leadership/president.webp";
+import fcrit1 from "@/assets/Achievements/Fcrit-1.webp";
+import fcrit2 from "@/assets/Achievements/Fcrit-2.webp";
+import fcrit3 from "@/assets/Achievements/Fcrit-3.webp";
+import kalsekar1 from "@/assets/Achievements/Kalsekar-1.webp";
+import kalsekar2 from "@/assets/Achievements/Kalsekar-2.webp";
+import kalsekar3 from "@/assets/Achievements/Kalsekar-3.webp";
+import apv1 from "@/assets/Achievements/apv-1.webp";
+import apv2 from "@/assets/Achievements/apv-2.webp";
+import apv3 from "@/assets/Achievements/apv-3.webp";
+import thakur2 from "@/assets/Achievements/Thakur 2.webp";
+import thakur1 from "@/assets/Achievements/Thakur 1.webp";
+import thakur3 from "@/assets/Achievements/Thakur 3.webp";
 import ecellCerti from "@/assets/Leadership/President-Certificate.webp";
 import lateComers from "@/assets/Certifications/latecomers.webp";
 import ocmAward from "@/assets/Leadership/ocmAward.webp";
@@ -226,8 +241,8 @@ export const LEADERSHIP = [
     badge: "Certificate Received",
     linkedinUrl: "#",
     images: [
+      { src: president, alt: "E-Cell session" },
       { src: ecellCerti, alt: "APV E-Cell President" },
-      // { src: projectResonance, alt: "E-Cell session" },
       // { src: video1, alt: "President certificate placeholder" },
     ] satisfies MediaImage[],
   },
@@ -267,44 +282,44 @@ export const ACHIEVEMENTS = [
     title: "Best Paper Award",
     detail: "1st International Conference on Trends in Management and Engineering Streams — International Winner",
     images: [{ src: dogi2, alt: "Best Paper Award - International Conference" }, { src: dogi3, alt: "Best Paper Award - International Conference" }, { src: dogi1, alt: "Best Paper Award - International Conference" }, { src: dogicerti, alt: "Best Paper Award - Certificate" }] satisfies MediaImage[],
-    linkedinUrl: "#",
+    linkedinUrl: "https://www.linkedin.com/posts/soham-dhanokar_internationalconference-firstprize-ai-activity-7457318746836299776-tjU7?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFh3CzwBFv-EvNf8xA56_tg-eKB7QKmuIPU",
     isInternational: true,
   },
   {
     title: "Thakur Shyamnarayan Engineering College, Kandivali",
     detail: "First Prize — State Level Technical Paper Presentation",
-    images: [{ src: projectCoal, alt: "Technical paper first prize" }] satisfies MediaImage[],
-    linkedinUrl: "#",
+    images: [{ src: thakur2, alt: "Technical paper first prize" },{ src: thakur1, alt: "Technical paper first prize" },{ src: thakur3, alt: "Technical paper first prize" }] satisfies MediaImage[],
+    linkedinUrl: "https://www.linkedin.com/posts/soham-dhanokar_technicalpaperpresentation-industry40-qualitycontrol-activity-7431540912163352576-P8SW?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFh3CzwBFv-EvNf8xA56_tg-eKB7QKmuIPU",
   },
   {
     title: "Shivajirao S. Jondhle Polytechnic, Asangaon",
     detail: "First Prize — State Level Technical Paper Presentation",
-    images: [{ src: projectAttendance, alt: "National winner recognition" }] satisfies MediaImage[],
-    linkedinUrl: "#",
+    images: [{ src: jondhale1, alt: "National winner recognition" },{ src: jondhale2, alt: "National winner recognition" },{ src: jondhale3, alt: "National winner recognition" }] satisfies MediaImage[],
+    linkedinUrl: "https://www.linkedin.com/posts/soham-dhanokar_technicalpaperpresentation-statelevel-firstprize-activity-7426467528031408128-uav_?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFh3CzwBFv-EvNf8xA56_tg-eKB7QKmuIPU",
   },
   {
-    title: "Fr. C. Rodrigues Institute of Technology (FCRIT), Vashi",
+    title: "Fr. C. Rodrigues Ins  titute of Technology (FCRIT), Vashi",
     detail: "First Prize — National Level Technical Paper Presentation",
-    images: [{ src: projectCoal, alt: "International conference winner" }] satisfies MediaImage[],
-    linkedinUrl: "#",
+    images: [{ src: fcrit1, alt: "International conference winner" },{ src: fcrit2, alt: "International conference winner" },{ src: fcrit3, alt: "International conference winner" }] satisfies MediaImage[],
+    linkedinUrl: "https://www.linkedin.com/posts/soham-dhanokar_sustainability-technology-innovation-activity-7390953415213727744-FVEE?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFh3CzwBFv-EvNf8xA56_tg-eKB7QKmuIPU",
   },
   {
     title: "AR Kalsekar Polytechnic, Panvel",
     detail: "First Prize — State LevelTechnical Paper Presentation",
-    images: [{ src: asstaward, alt: "AR Kalsekar Polytechnic first prize" }] satisfies MediaImage[],
-    linkedinUrl: "#",
+    images: [{ src: kalsekar1, alt: "AR Kalsekar Polytechnic first prize" },{ src: kalsekar2, alt: "AR Kalsekar Polytechnic first prize" },{ src: kalsekar3, alt: "AR Kalsekar Polytechnic first prize" }] satisfies MediaImage[],
+    linkedinUrl: "https://www.linkedin.com/posts/soham-dhanokar_artificialintelligence-ai-innovation-activity-7376820244805345280-Sn7o?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFh3CzwBFv-EvNf8xA56_tg-eKB7QKmuIPU",
   },
   {
     title: "Agnel Polytechnic, (Technocratz)",
     detail: "First Prize — State-Level Technical Paper Presentation (Artificial Intelligence)",
-    images: [{ src: projectCoal, alt: "Agnel Polytechnic Technocratz first prize" }] satisfies MediaImage[],
-    linkedinUrl: "#",
+    images: [{ src: apv1, alt: "Agnel Polytechnic Technocratz first prize" },{ src: apv2, alt: "Agnel Polytechnic Technocratz first prize" },{ src: apv3, alt: "Agnel Polytechnic Technocratz first prize" }] satisfies MediaImage[],
+    linkedinUrl: "https://www.linkedin.com/posts/soham-dhanokar_ai-artificialintelligence-innovation-activity-7380806525616988160-61-z?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFh3CzwBFv-EvNf8xA56_tg-eKB7QKmuIPU",
   },
   {
     title: "KJ Somaiya Polytechnic, Vidyavihar",
     detail: "First Prize — Clue Chronicle Technical Competition",
     images: [{ src: asstaward, alt: "KJ Somaiya Polytechnic first prize" }] satisfies MediaImage[],
-    linkedinUrl: "#",
+    linkedinUrl: "https://www.linkedin.com/posts/soham-dhanokar_cluechronicle-techevent-hackathon-activity-7354388865194803204-HtBI?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFh3CzwBFv-EvNf8xA56_tg-eKB7QKmuIPU",
   },
 ];
 
