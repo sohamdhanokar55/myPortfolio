@@ -107,7 +107,9 @@ export function Hero() {
           </Magnetic>
           <Magnetic>
             <a
-              href={SOCIALS.resume} target="blank"
+              href={SOCIALS.resume} 
+              target="_blank"
+              rel="noreferrer"
               className="inline-flex items-center gap-2 rounded-full border border-border px-7 py-3.5 text-sm font-semibold text-muted-foreground transition-colors hover:border-primary/60 hover:text-foreground"
             >
               <Download className="size-4" /> Download Resume

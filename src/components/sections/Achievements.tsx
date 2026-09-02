@@ -8,8 +8,17 @@ import { ACHIEVEMENTS, CURSOR } from "@/constants/site";
 export function Achievements() {
   const [active, setActive] = useState<number | null>(null);
   const current = active === null ? null : ACHIEVEMENTS[active];
-  const international = ACHIEVEMENTS[0];
-  const rest = ACHIEVEMENTS.slice(1);
+  const international = ACHIEVEMENTS.find((achievement) => achievement.category === "International Conference");
+  const groupedAchievements = [
+    "Technical Paper Presentations",
+    "Quiz Competition - (Clue Chronicle)",
+    "Others",
+  ].map((category) => ({
+    category,
+    achievements: ACHIEVEMENTS.map((achievement, index) => ({ achievement, index })).filter(
+      ({ achievement }) => achievement.category === category,
+    ),
+  }));
 
   return (
     <section id="achievements" className="relative section-pad">
@@ -26,9 +35,9 @@ export function Achievements() {
             role="button"
             tabIndex={0}
             data-cursor={CURSOR.recognition}
-            onClick={() => setActive(0)}
+            onClick={() => setActive(ACHIEVEMENTS.indexOf(international!))}
             onKeyDown={(event) => {
-              if (event.key === "Enter" || event.key === " ") setActive(0);
+              if (event.key === "Enter" || event.key === " ") setActive(ACHIEVEMENTS.indexOf(international!));
             }}
             whileHover={{ y: -4, scale: 1.02 }}
             transition={{ duration: 0.3 }}
@@ -49,6 +58,8 @@ export function Achievements() {
                 {international?.linkedinUrl && (
                   <a
                     href={international.linkedinUrl}
+                    target="_blank"
+                    rel="noreferrer"
                     data-cursor="Share the Win"
                     className="mt-6 inline-flex items-center gap-2 rounded-full border border-primary/40 bg-primary/10 px-4 py-2 text-sm text-primary transition-colors hover:bg-primary/20"
                     onClick={(event) => event.stopPropagation()}
@@ -69,19 +80,23 @@ export function Achievements() {
           </motion.article>
         </Reveal>
 
-        <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {rest.map((a, i) => (
-            <Reveal key={a.title} delay={0.15 + i * 0.06}>
-              <article
-                role="button"
-                tabIndex={0}
-                data-cursor={CURSOR.recognition}
-                onClick={() => setActive(i + 1)}
-                onKeyDown={(event) => {
-                  if (event.key === "Enter" || event.key === " ") setActive(i + 1);
-                }}
-                className="glass-card h-full w-full cursor-pointer p-7 text-left transition-all hover:border-primary/50"
-              >
+        <div className="mt-14 space-y-14">
+          {groupedAchievements.map(({ category, achievements }) => (
+            <div key={category}>
+              <h3 className="font-display text-2xl font-semibold">{category}</h3>
+              <div className="mt-6 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+                {achievements.map(({ achievement: a, index }, i) => (
+                  <Reveal key={a.title} delay={0.15 + i * 0.06}>
+                    <article
+                      role="button"
+                      tabIndex={0}
+                      data-cursor={CURSOR.recognition}
+                      onClick={() => setActive(index)}
+                      onKeyDown={(event) => {
+                        if (event.key === "Enter" || event.key === " ") setActive(index);
+                      }}
+                      className="glass-card h-full w-full cursor-pointer p-7 text-left transition-all hover:border-primary/50"
+                    >
                 <span
                   className="inline-flex size-11 items-center justify-center rounded-2xl"
                   style={{ background: "var(--gradient-brand)", boxShadow: "var(--glow-violet)" }}
@@ -105,6 +120,8 @@ export function Achievements() {
                   {a.linkedinUrl && (
                     <a
                       href={a.linkedinUrl}
+                      target="_blank"
+                      rel="noreferrer"
                       data-cursor="Share the Win"
                       className="inline-flex items-center gap-2 rounded-full border border-primary/40 bg-primary/10 px-4 py-2 text-xs text-primary transition-colors hover:bg-primary/20"
                       onClick={(event) => event.stopPropagation()}
@@ -113,8 +130,11 @@ export function Achievements() {
                     </a>
                   )}
                 </div>
-              </article>
-            </Reveal>
+                    </article>
+                  </Reveal>
+                ))}
+              </div>
+            </div>
           ))}
         </div>
       </div>
@@ -124,7 +144,7 @@ export function Achievements() {
         images={current?.images ?? []}
         title={current?.title}
         onClose={() => setActive(null)}
-        mode="triple"
+        mode={current?.category === "Others" ? "pair" : "triple"}
       />
     </section>
   );

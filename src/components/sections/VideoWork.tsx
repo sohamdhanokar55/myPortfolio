@@ -27,14 +27,17 @@ export function VideoWork() {
                 data-cursor={CURSOR.video}
                 className="glass-card group block w-full overflow-hidden text-left"
               >
-                <div className="relative overflow-hidden">
-                  <img
-                    src={v.image}
-                    alt={`${v.title} thumbnail`}
-                    width={576}
-                    height={1024}
-                    loading="lazy"
-                    className="aspect-[9/16] h-auto w-full bg-background/40 object-contain transition-transform duration-700 group-hover:scale-110"
+                <div className={`relative overflow-hidden ${v.orientation === "portrait" ? "aspect-[9/16]" : "aspect-video"}`}>
+                  <video
+                    src={v.video}
+                    poster={v.image}
+                    muted
+                    loop
+                    autoPlay
+                    playsInline
+                    preload="metadata"
+                    aria-label={`${v.title} preview`}
+                    className="size-full bg-background/40 object-cover transition-transform duration-700 group-hover:scale-110"
                   />
                   <span className="absolute inset-0 flex items-center justify-center">
                     <span
@@ -72,21 +75,20 @@ export function VideoWork() {
               animate={{ scale: 1, y: 0 }}
               exit={{ scale: 0.95, opacity: 0 }}
               onClick={(e) => e.stopPropagation()}
-              className="glass w-full max-w-3xl overflow-hidden rounded-3xl"
+              className={`glass w-full overflow-hidden rounded-3xl ${current.orientation === "portrait" ? "max-w-md" : "max-w-4xl"}`}
             >
-              <div className="relative aspect-video">
-                <img
-                  src={current.image}
-                  alt=""
-                  className="size-full object-cover opacity-60"
-                  width={1024}
-                  height={640}
+              <div className={current.orientation === "portrait" ? "aspect-[9/16]" : "aspect-video"}>
+                <video
+                  key={current.video}
+                  src={current.video}
+                  autoPlay
+                  controls
+                  loop
+                  playsInline
+                  preload="auto"
+                  className="size-full bg-black object-contain"
+                  aria-label={`${current.title} video`}
                 />
-                <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 text-center">
-                  <Play className="size-10 text-primary" />
-                  <p className="font-display text-xl font-semibold">{current.title}</p>
-                  <p className="text-xs text-muted-foreground">Video reel coming soon</p>
-                </div>
               </div>
               <button
                 onClick={() => setActive(null)}

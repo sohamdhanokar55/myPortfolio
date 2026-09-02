@@ -76,6 +76,8 @@ function ProjectScene({ project, index, total }: { project: Project; index: numb
         >
           <a
             href={project.demo}
+            target="_blank"
+            rel="noreferrer"
             data-cursor={CURSOR.project}
             className="inline-flex items-center gap-1.5 rounded-full px-5 py-2.5 text-sm font-medium text-primary-foreground"
             style={{ background: "var(--gradient-brand)", boxShadow: "var(--glow-violet)" }}
@@ -84,6 +86,8 @@ function ProjectScene({ project, index, total }: { project: Project; index: numb
           </a>
           <a
             href={project.github}
+            target="_blank"
+            rel="noreferrer"
             className="glass inline-flex items-center gap-1.5 rounded-full px-5 py-2.5 text-sm font-medium transition-colors hover:text-primary"
           >
             <Github className="size-4" /> GitHub
@@ -91,6 +95,8 @@ function ProjectScene({ project, index, total }: { project: Project; index: numb
           {project.linkedinUrl && (
             <a
               href={project.linkedinUrl}
+              target="_blank"
+              rel="noreferrer"
               className="glass inline-flex items-center gap-1.5 rounded-full px-5 py-2.5 text-sm font-medium transition-colors hover:text-primary"
               data-cursor="Share the Story →"
             >
@@ -102,6 +108,8 @@ function ProjectScene({ project, index, total }: { project: Project; index: numb
 
       <a
         href={project.demo}
+        target="_blank"
+        rel="noreferrer"
         data-cursor={CURSOR.project}
         className="relative mx-auto block w-full max-w-2xl"
         onPointerMove={(e) => {

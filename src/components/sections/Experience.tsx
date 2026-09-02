@@ -1,8 +1,13 @@
+import { useState } from "react";
 import { motion } from "motion/react";
 import { Reveal } from "@/components/effects";
+import { ImageGalleryModal } from "@/components/ImageGalleryModal";
 import { CURSOR, EXPERIENCE } from "@/constants/site";
 
 export function Experience() {
+  const [active, setActive] = useState<number | null>(null);
+  const current = active === null ? null : EXPERIENCE[active];
+
   return (
     <section id="experience" className="relative section-pad">
       <div className="mx-auto max-w-5xl px-6">
@@ -33,13 +38,22 @@ export function Experience() {
                     style={{ background: "var(--gradient-brand)" }}
                   />
                   <motion.article
+                    role="button"
+                    tabIndex={0}
+                    onClick={() => setActive(i)}
+                    onKeyDown={(event) => {
+                      if (event.key === "Enter" || event.key === " ") setActive(i);
+                    }}
                     whileHover={{
                       y: -8,
                       boxShadow: "var(--glow-soft)",
                     }}
                     transition={{ duration: 0.3, ease: [0.34, 1.56, 0.64, 1] }}
-                    className={`glass-card ml-10 p-7 md:ml-0 md:w-[calc(50%-2rem)] ${left ? "md:mr-auto" : "md:ml-auto"}`}
+                    className={`glass-card group relative ml-10 cursor-pointer p-7 md:ml-0 md:w-[calc(50%-2rem)] ${left ? "md:mr-auto" : "md:ml-auto"}`}
                   >
+                    <span className="pointer-events-none absolute right-5 top-5 rounded-full border border-primary/40 bg-background/90 px-3 py-1.5 text-[10px] uppercase tracking-widest text-primary opacity-0 transition-opacity group-hover:opacity-100 group-focus-visible:opacity-100">
+                      View Certificate
+                    </span>
                     <p className="font-display text-xs tracking-[0.35em] text-primary">{e.year}</p>
                     <div className="mt-3 flex items-start gap-4">
                       <span className="inline-flex size-12 shrink-0 items-center justify-center rounded-2xl border border-primary/40 bg-primary/10 font-display text-sm font-bold text-primary">
@@ -67,6 +81,14 @@ export function Experience() {
           </ul>
         </div>
       </div>
+
+      <ImageGalleryModal
+        open={Boolean(current)}
+        images={current?.images ?? []}
+        title={current ? `${current.company} Certificate` : undefined}
+        onClose={() => setActive(null)}
+        mode="single"
+      />
     </section>
   );
 }

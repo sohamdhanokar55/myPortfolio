@@ -58,6 +58,8 @@ export function Speaking() {
               {talk.linkedinUrl && (
                 <a
                   href={talk.linkedinUrl}
+                  target="_blank"
+                  rel="noreferrer"
                   data-cursor="See Me On Stage"
                   onClick={(event) => {
                     event.stopPropagation();
